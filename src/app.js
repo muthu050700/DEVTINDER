@@ -5,17 +5,24 @@ const app = express();
 const PORT = 7777;
 
 
+app.use("/user", (req, res) => {
+    res.send("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat")
+})
+
 app.get("/user", (req, res) => {
-    res.send({ name: "muthu", age: 20 })
+    res.send({ firstName: "Muthu", lastName: "Kumaran" })
 })
 
 app.post("/user", (req, res) => {
-    console.log("The data saved successfully");
-    res.send("The data saved successfully");
+    res.send("The data successfully saved to the database")
 })
 
-app.use("/test", (req, res) => {
-    res.send("This isss for test")
+app.delete("/user", (req, res) => {
+    res.send("Deleted successfully")
+})
+
+app.patch("/user", (req, res) => {
+    res.send("Updated successfully")
 })
 
 app.listen(PORT, () => {
